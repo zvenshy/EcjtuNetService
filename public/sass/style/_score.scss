@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+@for $i from 1 to 10 {
+    .item-#{$i} {
+        width: (1 / $i) * 100% - 0.03%;
+    }
+}
+
+#term, #classHeader {
+    width: 100%;
+    background: #97c5fe;
+    @include radius();
+}
+#term li, #date li {
+    font: 15px/3.0 $font-family;
+    color: #fff;
+    text-align: center;
+}
+table {
+    width: 100%;
+}
+tr td {
+    font: 400 15px/1.2 $font-family;
+    color: $base-blue;
+    border: 1px solid rgba($base-blue, 0.1);
+}
+#score tr td {
+    &:first-child {
+        width: 72%;
+        padding: 5% 2%;
+    }
+    &:last-child {
+        width: 25%;
+        text-align: center;
+    }
+}
+#classList tr td {
+
+    &:last-child {
+        width: 72%;
+        padding: 5% 2%;
+    }
+    &:first-child {
+        width: 25%;
+        text-align: center;
+        padding: 5% 2%;
+    }
+}

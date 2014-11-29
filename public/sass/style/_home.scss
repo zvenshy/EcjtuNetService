@@ -1,0 +1,30 @@
+@charset "utf-8";
+@import "../ui/ui/config";
+
+img {
+    width: 100%;
+}
+body {
+    background: #ededed;
+}
+#content {
+    margin-top: (637 / $base-width) * 100%;
+}
+
+.wrap ul {
+    width: (1 - (158 - 60) * 2 / (($base-width - 60)*2) ) * 100%;
+    margin: 0 auto;
+}
+.wrap li {
+    font-size: 0;
+    width: 244/($base-width - 158*2)*100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100% !important;
+    margin-top: (142 / $base-height) * 100%
+
+}
+
+#tempView {
+    width: (1020 - 61 * 2) / 1020 * 100%;
+    margin: 0 auto;
+}

@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+#card {
+    @include radius();
+    border: 1px solid #a3ccff;
+
+    li {
+        font: 20px/2.6 "Microsoft YaHei","微软雅黑",STHeiti, arial,sans-serif;
+        border-bottom: 1px solid #a3ccff;
+        color: $base-blue;
+
+/*         p {
+            font-size: 14px;
+            line-height: 2.0;
+        } */
+    }
+}
+#card .noborder {
+    border: 0;
+}
+#time {
+    width: 100%;
+    line-height: 46px;
+    background: #a3ccff;
+    color: #fff;
+    @include radius();
+
+    .fl {
+        font: 12px/46px $font-family;
+        margin-left: 12px;
+    }
+
+    .fr {
+        font: 14px/46px $font-family;
+        margin-right: 12px;
+    }
+}

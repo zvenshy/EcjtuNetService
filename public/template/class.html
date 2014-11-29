@@ -1,0 +1,38 @@
+<div id="class">
+    <div id="classHeader">
+        <ul id="date" class="overft">
+            <li class="fl item-7" ng-click="updateDay($event)">
+                日
+            </li>
+            <li class="fl item-7" ng-click="updateDay($event)">
+                一
+            </li>
+            <li class="fl item-7" ng-click="updateDay($event)">
+                二
+            </li>
+            <li class="fl item-7" ng-click="updateDay($event)">
+                三
+            </li>
+            <li class="fl item-7" ng-click="updateDay($event)">
+                四
+            </li>
+            <li class="fl item-7" ng-click="updateDay($event)">
+                五
+            </li>
+            <li class="fl item-7" ng-click="updateDay($event)">
+                六
+            </li>
+        </ul>
+    </div>
+    <div id="classList">
+        <table>
+            <tbody>
+                <tr ng-repeat="data in datas track by $index">
+                    <td>{{times[$index]}}</td>
+                    <td>{{data}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

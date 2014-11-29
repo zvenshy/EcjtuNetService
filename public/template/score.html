@@ -1,0 +1,65 @@
+ 
+    <!-- Score Template -->
+    <div id="termBox" class="layx">
+        <ul id="term" class="overft">
+            <li ng-repeat="term in terms" class="fl {{'item-' + number}}" ng-click="updateTerm($event)">
+                {{term}}
+            </li>
+        </ul>
+    </div>
+    <div id="score">
+        <table>
+            <tbody>
+                <tr ng-repeat="data in datas | filter: term">
+                    <td>{{data.Course}}</td>
+                    <td>{{data.Score}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--     <div id="termBox">
+    <ul id="term" class="overft">
+        <li class="fl item-3">
+            2013.1
+        </li>
+        <li class="fl item-3">
+            2012.2
+        </li>
+        <li class="fl item-3">
+            2012.1
+        </li>
+    </ul>
+</div>
+<div id="score" class="span10 offset1">
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td>思想道德思想道德思想道德</td>
+                <td>52<i class="l100">&nbsp;</i></td>
+            </tr>
+            <tr>
+                <td>思想道德思想道德思想道德</td>
+                <td>52/34<i></i></td>
+            </tr>
+            <tr>
+                <td>思想道德思想道德思想道德</td>
+                <td>52/34</td>
+            </tr>
+            <tr>
+                <td>思想道德思想道德思想道德</td>
+                <td>52/34</td>
+            <tr>
+                <td>思想道德思想道德思想道德</td>
+                <td>52/34</td>
+            </tr>
+            <tr>
+                <td> VFP数据库技术（A）</td>
+                <td>52/34</td>
+            </tr>
+            <tr>
+                <td>形势政策与省情教育III</td>
+                <td>52/34</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->

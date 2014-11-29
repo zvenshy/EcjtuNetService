@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.animation {
+    -webkit-transition:  1s linear all; 
+    transition:1s linear all;
+}
+
+.clickTrans {
+    -webkit-transform: rotateX(30deg); /* Chrome, Safari, Opera */
+    transform: rotateX(30deg);
+}

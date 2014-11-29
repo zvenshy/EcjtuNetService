@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" ng-app="ngView">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <meta name="keywords" content="日新网，华东交通大学，日新服务">
+    <meta name="description" content="日新服务：日新网为每一个花椒服务">
+    <meta name="author" content="zvenshy@gmail.com">
+    <title>日新服务</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="./ctrl/lib/angular.min.js"></script>
+    <script src="./ctrl/lib/angular-route.min.js"></script>
+    <script src="./ctrl/controller.js"></script>
+</head>
+<body class="sme" ng-controller="MainController">
+    <div id="content">
+        <div class="main">
+            <div class="wrap">
+                <ul class="overfl" id="indexList">
+                    <li class="fl" ng-click="setRoute($event)">
+                        <a href="/score/{{id}}">
+                            <img src="./images/score.png" alt="score">
+                        </a>
+                    </li>
+                    <li class="fr" ng-click="setRoute($event)">
+                        <a href="/class/{{id}}">
+                            <img src="./images/class.png" alt="class">
+                        </a>
+                    </li>
+                    <li class="fl" ng-click="setRoute($event)">
+                        <a href="/card/{{id}}">
+                            <img src="./images/card.png" alt="card">
+                        </a>
+                    </li>
+                    <li class="fr" ng-click="setRoute($event)">
+                        <a href="/library/{{id}}">
+                            <img src="./images/library.png" alt="library">
+                        </a>
+                    </li>
+                </ul>  
+            </div>
+            <div id="tempView" class="layx" ng-view>
+                
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="wrap">
+            <p id="grad" class="rl"><span id="gradl"></span><span id="gradr"></span><span id="tip">tips</span></p>
+            <p>想了解我们嘛？</p>
+            <p>欢迎访问：<a href="http://www.ecjtu.net">日新首页</a>or<a href="http://www.ecjtu.net/about">关于我们</a></p>
+            <p><em class="cricon"></em>日新技术研发中心技术支持</p>
+        </div>
+        <div class="foot-fixed">
+            <input type="text" placeholder="请输入您的学号" ng-model="id">
+            <a id="searchRoute" href="/{{type}}/{{id}}">搜索</a>
+        </div>
+    </footer>
+
+    <header class="head-fixed">
+        <div class="wrap">
+            <div id="menu" class="overfl">
+                <span id="slogo" class="fl"></span>
+                <div id="set" class="fr">
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div id="mlogo" class="layx">
+            <img src="./images/mlogo.png" alt="">
+        </div>
+
+        <div id="tl"></div>
+        <div id="tr"></div>
+    </header>
+</body>
+</html>

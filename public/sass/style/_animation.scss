@@ -1,11 +1,73 @@
 @charset "utf-8";
 
-.animation {
-    -webkit-transition:  1s linear all; 
-    transition:1s linear all;
+.indexAnim {
+    -webkit-animation: indexList 1.5s linear;
+    animation: indexList 1.5s linear;
+    opacity: 0;
+    display: none;
+}
+@-webkit-keyframes indexList {
+    from {
+        opacity: 1.0;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
-.clickTrans {
-    -webkit-transform: rotateX(30deg); /* Chrome, Safari, Opera */
-    transform: rotateX(30deg);
+@keyframes indexList {
+    from {
+        opacity: 1.0;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.tempAnim {
+    -webkit-animation: tempAnim 0.5s linear;
+    animation: tempAnim 0.5s linear;
+    min-height: 200px;
+    display: block;
+    opacity: 1;
+}
+@-webkit-keyframes tempAnim {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes tempAnim {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.headerAnim {
+    -webkit-animation: headerAnim 0.5s linear;
+    animation: headerAnim 0.5s linear;
+    margin-top: -80%;
+}
+@-webkit-keyframes headerAnim {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes headerAnim {
+    from {
+        margin-top: 0;
+    }
+    to {
+        margin-top: -80%;
+    }
 }

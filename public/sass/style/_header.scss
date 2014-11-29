@@ -3,16 +3,25 @@
 
 header {
     width: 100%;
-    padding-bottom: (637-480) / 1020 *100%; 
+    padding: (637-480)/2 / 1020 *100% 0; 
     z-index: 100;
-    background: #c7dffc;
+    background: $base-blue;
+}
+.height50 {
+    height: 50px;
+    padding: 0 !important;
 }
 .wrap {
     margin: 0 auto;
 }
 
 #menu {
-    padding-top: 15px;
+    height: 50px;
+}
+#back {
+    font: 16px/1.0 $font-family;
+    color: #fff;
+    line-height: 50px;
 }
 #mlogo {
     width: (436 / $base-width) * 100%;
@@ -20,6 +29,7 @@ header {
 
 #set {
     width: 22px;
+    padding-top: 15px;
 
     p {
         height: 2px;

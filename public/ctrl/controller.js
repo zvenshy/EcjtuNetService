@@ -1,4 +1,4 @@
-angular.module('ngView', ['ngRoute', 'ngAnimate'])
+angular.module('ngView', ['ngRoute'])
 
  .controller('MainController', function($scope) {
     $scope.type = 'score';
@@ -7,12 +7,42 @@ angular.module('ngView', ['ngRoute', 'ngAnimate'])
     var stuIdStart = cookie.indexOf(stuIdName) + stuIdName.length + 1;
     var stuIdEnd = cookie.indexOf(";",stuIdStart);
     $scope.id = cookie.substring(stuIdStart, stuIdEnd);
+    function h2t() {
+      //content
+        angular.element(document.querySelector('#content .wrap')).addClass('indexAnim')
+        angular.element(document.querySelector('#tempView')).addClass('tempAnim')
+        angular.element(document.querySelector('#content')).addClass('mar70')
+      //header
+        angular.element(document.querySelector('#mlogo')).addClass('headerAnim')
+        angular.element(document.querySelector('header')).addClass('height50')
+        angular.element(document.querySelector('#menu')).removeClass('hide');
+      //footer
+        angular.element(document.querySelector('#change')).removeClass('hide')
+    }
+    function t2h() {
+      //content
+        angular.element(document.querySelector('#content .wrap')).removeClass('indexAnim').removeClass('hide')
+        angular.element(document.querySelector('#tempView')).addClass('hide').removeClass('tempAnim')
+        angular.element(document.querySelector('#content')).removeClass('mar70')
+      //header
+        angular.element(document.querySelector('#mlogo')).removeClass('headerAnim')
+        angular.element(document.querySelector('header')).removeClass('height50')
+        angular.element(document.querySelector('#menu')).addClass('hide');
+      //footer
+        angular.element(document.querySelector('#change')).addClass('hide')
+    }
     $scope.setRoute = function (e) {
+        var load = angular.element(document.querySelector('.loading'));
+        if (load.hasClass('hide'))
+          load.removeClass('hide');
         if (document.cookie.indexOf('uc_token') === -1) 
             window.location.href = 'http://user.ecjtu.net/login?redirect=http://www.ecjtu.net';
-
+        h2t();
         $scope.type = e['target']['alt'];
     };
+    $scope.back = function () {
+        t2h()
+    }
  })
     //Score Search Controller
     //id: student ID
@@ -21,7 +51,8 @@ angular.module('ngView', ['ngRoute', 'ngAnimate'])
     //term : used to sort score by term
  .controller('ScoreController', function ($scope, $http, $routeParams) {
     $scope.id = $routeParams.id;
-    var data = window['data'] = function (jsonpdata) {
+    var data = window['data'] = function (jsonpdata) {  
+        angular.element(document.querySelector('.loading')).addClass('hide');
         $scope.datas = jsonpdata;
         $scope.terms = [];
         angular.forEach($scope.datas, function (v, i) {
@@ -43,6 +74,7 @@ angular.module('ngView', ['ngRoute', 'ngAnimate'])
  })
 
  .controller('ClassController', function ($scope, $http, $routeParams) {
+    angular.element(document.querySelector('.loading')).addClass('hide');
     $scope.id = $routeParams.id;
     $scope.day = new Date().getDay() || 7;
     var dayArr = ['一', '二', '三', '四', '五', '六', '日'];
@@ -75,7 +107,13 @@ angular.module('ngView', ['ngRoute', 'ngAnimate'])
  })
 
  .controller('CardController', function ($scope, $http, $routeParams) {
+    angular.element(document.querySelector('.loading')).addClass('hide');
     $scope.id = $routeParams.id;
+    var time = new Date();
+    var dayArr = ['日', '一', '二', '三', '四', '五', '六'];
+    $scope.month = time.getMonth() + 1;
+    $scope.date = time.getDate();
+    $scope.day = dayArr[time.getDay()];
     var tokenName = 'uc_token';
     var cookie = document.cookie;
     var tokenStart = cookie.indexOf(tokenName) + tokenName.length + 1;

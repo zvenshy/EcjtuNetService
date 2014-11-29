@@ -129,8 +129,11 @@ body {
   overflow: hidden; }
 
 /* about display */
-.hidden {
+.hide {
   display: none; }
+
+.show {
+  display: block; }
 
 /* about position */
 .head-fixed {
@@ -283,21 +286,31 @@ select {
 /*  组件  */
 header {
   width: 100%;
-  padding-bottom: 15.39216%;
+  padding: 7.69608% 0;
   z-index: 100;
-  background: #c7dffc; }
+  background: #66a7fa; }
+
+.height50 {
+  height: 50px;
+  padding: 0 !important; }
 
 .wrap {
   margin: 0 auto; }
 
 #menu {
-  padding-top: 15px; }
+  height: 50px; }
+
+#back {
+  font: 16px/1 "Microsoft YaHei", "微软雅黑", STHeiti, arial, sans-serif;
+  color: #fff;
+  line-height: 50px; }
 
 #mlogo {
   width: 42.7451%; }
 
 #set {
-  width: 22px; }
+  width: 22px;
+  padding-top: 15px; }
   #set p {
     height: 2px;
     background: #fff; }
@@ -361,6 +374,63 @@ p {
   height: 13px;
   background: url("../images/sprite.png") -10px; }
 
+#change {
+  width: 100%;
+  height: 50px;
+  background: #66a7fa;
+  line-height: 50px; }
+  #change input {
+    width: 55%;
+    padding: 0 5%;
+    height: 30px;
+    border: 1px solid #66a7fa;
+    font: 16px/1 "Microsoft YaHei", "微软雅黑", STHeiti, arial, sans-serif;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    position: relative;
+    top: 0px;
+    margin-left: 2%; }
+
+#searchRoute {
+  color: #66a7fa;
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  text-align: center;
+  background: #ededed;
+  border: 1px solid #66a7fa;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+
+#more {
+  display: inline-block;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  margin-left: 5px;
+  border: 2px solid #fff;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  border-radius: 13px; }
+  #more span {
+    display: inline-block;
+    width: 10px;
+    height: 16px;
+    background: url("../images/sprite.png");
+    position: relative;
+    top: 2px;
+    left: 2px; }
+
 /* 布局
  -------------------------------------------------------------*/
 img {
@@ -369,8 +439,16 @@ img {
 body {
   background: #ededed; }
 
+input {
+  outline: none; }
+
 #content {
   margin-top: 62.45098%; }
+  #content .wrap {
+    margin-bottom: 10%; }
+
+.mar70 {
+  margin-top: 70px !important; }
 
 .wrap ul {
   width: 89.79167%;
@@ -386,6 +464,16 @@ body {
 #tempView {
   width: 88.03922%;
   margin: 0 auto; }
+
+.loading {
+  color: #66a7fa;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font: italic 16px/1 Georgia, "Microsoft YaHei", "微软雅黑", STHeiti, arial, sans-serif; }
+
+#tempView .hide {
+  display: none; }
 
 .item-1 {
   width: 99.97%; }
@@ -413,6 +501,9 @@ body {
 
 .item-9 {
   width: 11.08111%; }
+
+.item-7 {
+  font-size: 12px !important; }
 
 #term, #classHeader {
   width: 100%;
@@ -484,11 +575,57 @@ tr td {
     font: 14px/46px "Microsoft YaHei", "微软雅黑", STHeiti, arial, sans-serif;
     margin-right: 12px; }
 
-.animation {
-  -webkit-transition: 1s linear all;
-  transition: 1s linear all; }
+.indexAnim {
+  -webkit-animation: indexList 1.5s linear;
+  animation: indexList 1.5s linear;
+  opacity: 0;
+  display: none; }
 
-.clickTrans {
-  -webkit-transform: rotateX(30deg);
-  /* Chrome, Safari, Opera */
-  transform: rotateX(30deg); }
+@-webkit-keyframes indexList {
+  from {
+    opacity: 1.0; }
+
+  to {
+    opacity: 0; } }
+@keyframes indexList {
+  from {
+    opacity: 1.0; }
+
+  to {
+    opacity: 0; } }
+.tempAnim {
+  -webkit-animation: tempAnim 0.5s linear;
+  animation: tempAnim 0.5s linear;
+  min-height: 200px;
+  display: block;
+  opacity: 1; }
+
+@-webkit-keyframes tempAnim {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+@keyframes tempAnim {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+.headerAnim {
+  -webkit-animation: headerAnim 0.5s linear;
+  animation: headerAnim 0.5s linear;
+  margin-top: -80%; }
+
+@-webkit-keyframes headerAnim {
+  from {
+    opacity: 0.3; }
+
+  to {
+    opacity: 0; } }
+@keyframes headerAnim {
+  from {
+    margin-top: 0; }
+
+  to {
+    margin-top: -80%; } }

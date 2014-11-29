@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/style.min.css">
     <script src="./ctrl/lib/angular.min.js"></script>
     <script src="./ctrl/lib/angular-route.min.js"></script>
-    <script src="./ctrl/lib/angular-animate.min.js"></script>
     <script src="./ctrl/controller.js"></script>
 </head>
 <body class="sme" ng-controller="MainController">
@@ -42,8 +41,11 @@
                     </li>
                 </ul>  
             </div>
-            <div id="tempView" class="layx" ng-view>
-                
+            <div id="tempView" class="hide">
+                <span class="loading">loading...</span>
+                <div class="layx" ng-view>
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -54,16 +56,17 @@
             <p>欢迎访问：<a href="http://www.ecjtu.net">日新首页</a>or<a href="http://www.ecjtu.net/about">关于我们</a></p>
             <p><em class="cricon"></em>日新技术研发中心技术支持</p>
         </div>
-        <div class="foot-fixed">
+        <div id="change" class="foot-fixed hide">
+            <span id="more"><span></span></span>
             <input type="text" placeholder="请输入您的学号" ng-model="id">
-            <a id="searchRoute" href="/{{type}}/{{id}}">搜索</a>
+            <a id="searchRoute" class="fr" href="/{{type}}/{{id}}">搜索</a>
         </div>
     </footer>
 
     <header class="head-fixed">
         <div class="wrap">
-            <div id="menu" class="overfl">
-                <span id="slogo" class="fl"></span>
+            <div id="menu" class="overfl hide">
+                <span id="back" class="fl" ng-click="back()">返回</span>
                 <div id="set" class="fr">
                     <p></p>
                     <p></p>

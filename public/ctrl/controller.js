@@ -1,6 +1,6 @@
-angular.module('ngView', ['ngRoute'])
+angular.module('ngView', ['ngRoute', 'ngAnimate'])
 
- .controller('MainController', function($scope, $animation) {
+ .controller('MainController', function($scope) {
     $scope.type = 'score';
     var stuIdName = 'student_id';
     var cookie = document.cookie;

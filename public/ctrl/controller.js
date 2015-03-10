@@ -50,9 +50,9 @@ angular.module('ngView', ['ngRoute'])
     //terms: an Array of terms the student exd, used to output terms list
     //term : used to sort score by term
  .controller('ScoreController', function ($scope, $http, $routeParams) {
+    angular.element(document.querySelector('.loading')).addClass('hide');
     $scope.id = $routeParams.id;
     var data = window['data'] = function (jsonpdata) {  
-        angular.element(document.querySelector('.loading')).addClass('hide');
         $scope.datas = jsonpdata;
         $scope.terms = [];
         angular.forEach($scope.datas, function (v, i) {
@@ -90,9 +90,6 @@ angular.module('ngView', ['ngRoute'])
         $scope.content = jsonpdata.content;
         $scope.datas = toArray($scope.content[$scope.day]);
         $scope.times = toArray($scope.content['0']);
-        angular.forEach($scope.datas, function (v, i) {
-            $scope.datas[i] = v.replace()
-        });
     };
     $scope.updateDay = function (e) {
       $scope.day = dayArr.indexOf(e.target.innerText)*1 + 1;
